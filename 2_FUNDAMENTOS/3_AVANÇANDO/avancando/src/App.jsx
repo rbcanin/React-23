@@ -5,6 +5,8 @@ import ManageData from "./components/ManageData";
 import ConditionalRender from "./components/ConditionalRender";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
+import Fragmento from "./components/Fragmento";
+import Container from "./components/Container";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +28,8 @@ function App() {
         <ShowUserName name=" Carol" />
         <CarDetails brand=" Gol" km={100} cor=" Laranja" />
         <CarDetails brand=" RAM" km={500} cor=" roxo" />
+        <Fragmento propFragmento="Testando" />
+        <Container>Teste aqi</Container>
       </div>
     </>
   );
