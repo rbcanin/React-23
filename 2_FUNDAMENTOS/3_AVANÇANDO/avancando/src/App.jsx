@@ -7,11 +7,21 @@ import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragmento from "./components/Fragmento";
 import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
+import Message from "./components/Message";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const [massage, setMassage] = useState();
+  function showMassage() {
+    console.log("Evento comp Pai");
+  }
+
+  const [massage, setMassage] = useState("");
+
+  const handleMassage = (msg) => {
+    setMassage(msg);
+  };
 
   return (
     <>
@@ -32,6 +42,8 @@ function App() {
         <CarDetails brand=" RAM" km={500} cor=" roxo" />
         <Fragmento propFragmento="Testando" />
         <Container>Teste aqi</Container>
+        <ExecuteFunction minhaFuncao={showMassage} />
+        <Message msg={message} />
       </div>
     </>
   );
