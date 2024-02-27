@@ -9,17 +9,18 @@ import Fragmento from "./components/Fragmento";
 import Container from "./components/Container";
 import ExecuteFunction from "./components/ExecuteFunction";
 import Message from "./components/Message";
+import ChangeMessageState from "./components/ChangeMessageState";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  function showMassage() {
+  function showMessage() {
     console.log("Evento comp Pai");
   }
 
-  const [massage, setMassage] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleMassage = (msg) => {
+  const handleMessage = (msg) => {
     setMassage(msg);
   };
 
@@ -42,8 +43,9 @@ function App() {
         <CarDetails brand=" RAM" km={500} cor=" roxo" />
         <Fragmento propFragmento="Testando" />
         <Container>Teste aqi</Container>
-        <ExecuteFunction minhaFuncao={showMassage} />
+        <ExecuteFunction minhaFuncao={showMessage} />
         <Message msg={message} />
+        <ChangeMessageState handleMassage={handleMessage} />
       </div>
     </>
   );
