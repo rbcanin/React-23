@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import "./index.css";
 import MyComponents from "./components/MyComponents";
+import Titulo from "./components/Titulo";
 
 function App() {
   const n = 10;
@@ -28,6 +29,8 @@ function App() {
       <h1 className={titulo ? "simCerto" : "notCerto"}>
         Título com classe dinâmica
       </h1>
+      {/*CSS módulos */}
+      <Titulo />
     </div>
   );
 }

@@ -1,0 +1,19 @@
+form {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: lightpink;
+  border-radius: 10px;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  margin-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
