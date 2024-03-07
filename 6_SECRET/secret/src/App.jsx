@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import MyForm from "./components/MyForm";
+import StartScreen from "./components/StartScreen";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -8,7 +8,8 @@ function App() {
   return (
     <>
       <div className="App">
-        <MyForm user={{ name: "Estela", contato: "43 99624-3203" }} />
+        <h1>Secret Word</h1>
+        <StartScreen />
       </div>
     </>
   );

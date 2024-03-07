@@ -1,15 +1,29 @@
 import { useState } from "react";
 import "./MyForm.css";
 
-const MyForm = () => {
-  const [name, setName] = useState();
-  const [contato, setContato] = useState();
+const MyForm = (user) => {
+  const [name, setName] = useState(user ? user.name : " ");
+  const [contato, setContato] = useState(user ? user.contato : " ");
 
   const handleName = (e) => {
-    console.log(e);
+    setName(e.target.value);
   };
 
-  const handleSubmit = (evento) => {};
+  const handleContact = (e) => {
+    setContato(e.target.value);
+  };
+
+  //console.log(name);
+  //onsole.log(contato);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Enviando form");
+    console.log(name, contato);
+
+    setName(" ");
+    setEmail(" ");
+  };
 
   return (
     <div>
@@ -21,14 +35,23 @@ const MyForm = () => {
             type="text"
             name="name"
             placeholder="Digite o seu nome"
-            onChange={handleName}
+            onChange={(e) => setName(e.target.value)}
+            value={name}
           />
         </div>
         {/* label envolvendo input*/}
-        <label htmlFor="contato">
-          <span>Contato: </span>
-          <input type="contato" placeholder="(  ) 99999-9999" />
-        </label>
+        <div>
+          <label htmlFor="contato">
+            <span>Contato: </span>
+            <input
+              type="text"
+              name="contato"
+              placeholder="(  ) 99999-9999"
+              onChange={(e) => setContato(e.target.value)}
+              value={contato}
+            />
+          </label>
+        </div>
         <input type="submit" value={"Enviar"} />
         {/* 5. envio de form*/}
       </form>
