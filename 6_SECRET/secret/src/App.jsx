@@ -23,12 +23,36 @@ function App() {
   const [jogoEstado, setJogoEstado] = useState(estado[0].name);
   const [words] = useState(wordsList);
 
-  const [palavraEscolhida, setPickedWord] = useState("");
+  const [palavraEscolhida, setPalavraEscolhida] = useState("");
   const [categoriaPalavra, setCategoriaPalavra] = useState("");
   const [letras, setLetras] = useState([]);
 
+  const palavraEscolhidaCategoria = () => {
+    const categorias = Object.keys(words);
+    const categoria =
+      categorias[Math.floor(Math.random() * Object.keys(categorias).length)];
+    console.log(categoria);
+
+    const palavra =
+      words[categoria][Math.floor(Math.random() * words[categoria].length)];
+    console.log(palavra);
+    return { palavra, categoria };
+  };
+
   //Clique pra começar o jogo
   const startJogo = () => {
+    const { palavra, categoria } = palavraEscolhidaCategoria();
+
+    let mundoLetras = palavra.split("");
+    mundoLetras = mundoLetras.map((l) => l.toLowerCase());
+
+    console.log(palavra, categoria);
+    console.log(mundoLetras);
+
+    setCategoriaPalavra(palavra);
+    setPalavraEscolhida(categoria);
+    setLetras(letras);
+
     setJogoEstado(estado[1].name);
   };
 
