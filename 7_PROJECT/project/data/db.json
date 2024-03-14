@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Tshirt",
+      "price": 59.9
+    },
+    {
+      "id": 2,
+      "name": "Wide Leg",
+      "price": 90
+    },
+    {
+      "id": 3,
+      "name": "Pulseira Pandora",
+      "price": 29.9
+    }
+  ]
+}
