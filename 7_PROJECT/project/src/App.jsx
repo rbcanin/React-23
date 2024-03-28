@@ -46,6 +46,7 @@ function App() {
     <>
       <div className="App">
         <h1>Lista de Produtos</h1>
+        <h1>oi</h1>
         <ul>
           {products.map((product) => (
             <li key={product.id}>

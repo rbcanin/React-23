@@ -49,6 +49,7 @@ export const useAuthentication = () => {
 
   return {
     auth,
+
     createUser,
     error,
     loading,
