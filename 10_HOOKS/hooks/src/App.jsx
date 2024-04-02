@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
+import HookUseState from "./components/HookUseState";
+import HookUseReducer from "./components/HookUseReducer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,20 +14,8 @@ function App() {
     <>
       <div>
         <h1>Hooks</h1>
-        <BrowserRouter>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="./Sobre">Sobre</Link>
-            </li>
-          </ul>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/" element={<Sobre />} />
-          </Routes>
-        </BrowserRouter>
+        <HookUseState />
+        <HookUseReducer />
       </div>
     </>
   );
