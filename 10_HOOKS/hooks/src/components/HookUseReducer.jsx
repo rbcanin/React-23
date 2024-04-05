@@ -6,6 +6,14 @@ const HookUseReducer = () => {
   });
 
   //avançando
+  const initialTaks = [
+    { id: 1, text: "Fazer uma coisa" },
+    { id: 2, text: "Fazer outra coisa" },
+  ];
+
+  const taskReducer = (state, action) => {};
+
+  const [tasks, dispatchTasks] = useReducer(taskReducer, initialTaks);
 
   return (
     <div>
@@ -13,6 +21,10 @@ const HookUseReducer = () => {
       <h2>useReducer</h2>
       <p>numero: {numero}</p>
       <button onClick={dispatch}>Alterar número</button>
+      <h3>Tarefas</h3>
+      {tasks.map((task) => (
+        <li key={task.id}>{task.text}</li>
+      ))}
       <hr />
     </div>
   );
