@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
 import HookUseState from "./components/HookUseState";
 import HookUseReducer from "./components/HookUseReducer";
+import HookUseEffect from "./components/HookUseEffect";
+import HookUseContext from "./components/HookUseContext";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,9 +15,12 @@ function App() {
   return (
     <>
       <div>
-        <h1>Hooks</h1>
-        <HookUseState />
-        <HookUseReducer />
+        <HookUseContext>
+          <h1>Hooks</h1>
+          <HookUseState />
+          <HookUseReducer />
+          <HookUseEffect />
+        </HookUseContext>
       </div>
     </>
   );
