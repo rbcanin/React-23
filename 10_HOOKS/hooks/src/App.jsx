@@ -8,6 +8,7 @@ import HookUseState from "./components/HookUseState";
 import HookUseReducer from "./components/HookUseReducer";
 import HookUseEffect from "./components/HookUseEffect";
 import HookUseContext from "./components/HookUseContext";
+import HookUseRef from "./components/HookUseRef";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,12 +16,12 @@ function App() {
   return (
     <>
       <div>
-        <HookUseContext>
-          <h1>Hooks</h1>
-          <HookUseState />
-          <HookUseReducer />
-          <HookUseEffect />
-        </HookUseContext>
+        <h1>Hooks</h1>
+        <HookUseState />
+        <HookUseReducer />
+        <HookUseEffect />
+        <HookUseContext />
+        <HookUseRef />
       </div>
     </>
   );
