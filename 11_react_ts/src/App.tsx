@@ -13,7 +13,10 @@ function App() {
   const name: string = "Rebeca";
   const age: number = 20;
   const isWorking: boolean = true;
-  const mytext: textOrNull = "tem um texto aqui";
+
+  // Type
+
+  const myText: textOrNull = "tem um texto aqui";
   let secondText: textOrNull = null;
 
   secondText = "oi";
@@ -48,6 +51,8 @@ function App() {
         category={Category.P}
       />
       <State />
+      {myText && <p>Tem um texto here</p>}
+      {secondText && <p>OI</p>}
     </div>
   );
 }
