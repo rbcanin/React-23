@@ -1,3 +1,10 @@
+import Destructing, { Category } from "./components/Destructing";
+import FirstComponent from "./components/FirstComponent";
+import SegundoComponente from "./components/SegundoComponente";
+import State from "./components/State";
+
+type textOrNull = string | null;
+
 function App() {
   //Aqui aplica a lógica
 
@@ -6,6 +13,10 @@ function App() {
   const name: string = "Rebeca";
   const age: number = 20;
   const isWorking: boolean = true;
+  const mytext: textOrNull = "tem um texto aqui";
+  let secondText: textOrNull = null;
+
+  secondText = "oi";
 
   //funções
 
@@ -20,6 +31,23 @@ function App() {
       <p>Idade: {age}</p>
       {isWorking && <p>Está trabalhando</p>}
       <h3>{greeting(name)}</h3>
+      <FirstComponent />
+      <SegundoComponente name="Segundo" />
+      <Destructing
+        title="Primeiro post"
+        content="Algum conteúdo"
+        commentsQty={20}
+        tags={["ts", "js"]}
+        category={Category.TS}
+      />
+      <Destructing
+        title="Segundo post"
+        content="x conteúdo"
+        commentsQty={30}
+        tags={["ts ", "js"]}
+        category={Category.P}
+      />
+      <State />
     </div>
   );
 }
